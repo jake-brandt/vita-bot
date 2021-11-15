@@ -1,0 +1,32 @@
+nutrient_id,name,amount,unit_name
+-1,Chloride,2300,mg
+-2,Fluoride,4,mg
+1089,Iron,11,mg
+-4,"Vitamin K",120,µg
+1087,Calcium,1300,mg
+1090,Magnesium,420,mg
+1091,Phosphorus,1250,mg
+1092,Potassium,3400,mg
+1093,Sodium,1500,mg
+1095,Zinc,11,mg
+1096,Chromium,35,µg
+1098,Copper,900,µg
+1100,Iodine,150,µg
+1101,Manganese,2.3,mg
+1102,Molybdenum,45,µg
+1103,Selenium,55,µg
+1106,"Vitamin A",900,µg
+1109,"α-tocopherol (Vitamin E)",15,mg
+1114,"Vitamin D",20,µg
+1162,"Vitamin C",90,mg
+1165,"Thiamin (B1)",1.2,mg
+1166,"Riboflavin (B2)",1.3,mg
+1167,"Niacin (B3)",16,mg
+1170,"Pantothenic acid (B5)",5,mg
+1175,"Vitamin B6",1.7,mg
+1176,"Biotin (B7)",30,µg
+1177,"Folate (B9)",400,µg
+1178,"Cobalamin (B12)",2.4,µg
+1180,Choline,550,mg
+1003,Protein,60,g
+2033,Fiber,38,g
