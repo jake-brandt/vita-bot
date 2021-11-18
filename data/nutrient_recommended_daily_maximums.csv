@@ -1,3 +1,4 @@
-1257,"Fatty acids, trans",1,g
-1258,"Fatty acids, saturated",18,g
-1253,"Cholesterol",200,mg
+nutrient_id,amount
+1257,1
+1258,18
+1253,200
