@@ -1,21 +1,20 @@
 import random
-from services import ConfigurationService
-from services.data import FoodDataService
+from services import ConfigurationService, DataService
 
 
 class RecipeGeneratorService():
     configuration_service: ConfigurationService = None
-    food_data_service: FoodDataService = None
+    data_service: DataService = None
 
     def __init__(
             self,
             configuration_service: ConfigurationService,
-            food_data_service: FoodDataService):
+            data_service: DataService):
         self.configuration_service = configuration_service
-        self.food_data_service = food_data_service
+        self.data_service = data_service
 
     def create_recipe(self):
-        food_ids = self.food_data_service.get_unique_ids()
+        food_ids = self.data_service.unique_fdc_ids
         food_ids_length = len(food_ids)
         reqd_base_ingredient_ids = self.configuration_service.required_base_foods
 

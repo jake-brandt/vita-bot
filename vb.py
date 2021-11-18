@@ -2,14 +2,13 @@
 vitabot 3000
 """
 
-from services import ConfigurationService, RecipeGeneratorService
-from services.data import FoodDataService
+from services import ConfigurationService, DataService, RecipeGeneratorService
 
 def main():
     """Main entrypoint"""
     configuration_service = ConfigurationService()
-    food_service = FoodDataService()
-    recipe_service = RecipeGeneratorService(configuration_service, food_service)
+    data_service = DataService()
+    recipe_service = RecipeGeneratorService(configuration_service, data_service)
 
     print(recipe_service.create_recipe())
 
