@@ -25,3 +25,7 @@ class DataService():
             self._cached_fdc_ids = list(self._food_dataset.index.unique())
 
         return self._cached_fdc_ids
+
+    def get_nutrients_for_item(self, fdc_id):
+        nutrient_ids = self._food_nutrient_dataset.loc[fdc_id, :]
+        nutrients = self._nutrient_dataset.loc[nutrient_ids.index]
