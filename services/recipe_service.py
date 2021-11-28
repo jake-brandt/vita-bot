@@ -2,7 +2,7 @@ import random
 from services import ConfigurationService, DataService
 from itertools import zip_longest
 
-class RecipeGeneratorService():
+class RecipeService():
     configuration_service: ConfigurationService = None
     data_service: DataService = None
 
@@ -46,3 +46,18 @@ class RecipeGeneratorService():
         of pairs, the first value being a nutrient ID and the second value being the
         amount of the nutrient present in the recipe.
         '''
+        nutrient_info = self._get_nutrients_for_item(recipe[0][0])
+        weighted_nutrient_info = [row for row in nutrient_info.iterrows()];
+        print(weighted_nutrient_info)
+
+    def _get_nutrients_for_item(self, fdc_id):
+        '''
+        Returns the set of nutrients in the requested FDC entry, with
+        amounts per 100g of said entry.
+        '''
+        nutrients_in_fdc_item = self.data_service.get_food_nutrients(fdc_id)
+        nutrients = self.data_service.get_nutrients(nutrients_in_fdc_item.index)
+
+        amounts_per_100g = nutrients_in_fdc_item['amount']
+
+        return nutrients.join(amounts_per_100g)

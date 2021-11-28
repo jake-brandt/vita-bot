@@ -1,4 +1,5 @@
 import pandas as pd
+from itertools import zip_longest
 
 class DataService():
     _food_dataset = None
@@ -26,6 +27,14 @@ class DataService():
 
         return self._cached_fdc_ids
 
-    def get_nutrients_for_item(self, fdc_id):
-        nutrient_ids = self._food_nutrient_dataset.loc[fdc_id, :]
-        nutrients = self._nutrient_dataset.loc[nutrient_ids.index]
+    def get_food_nutrients(self, fdc_id):
+        '''
+        Return all food-nutrient mappings for a given FCD ID
+        '''
+        return self._food_nutrient_dataset.loc[fdc_id, :]
+
+    def get_nutrients(self, nutrient_ids):
+        '''
+        Return data for all nutrient IDs requested
+        '''
+        return self._nutrient_dataset.loc[nutrient_ids]
