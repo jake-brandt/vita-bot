@@ -1,7 +1,7 @@
 import random
 import pandas as pd
 from models.recipe_entry import RecipeEntry
-from services import ConfigurationService, DataService
+from . import ConfigurationService, DataService
 from itertools import zip_longest
 
 class RecipeService():
@@ -34,7 +34,7 @@ class RecipeService():
         ]
 
         portions = list(map(
-            lambda _: random.choice(range(1, 283)) / 100,
+            lambda _: random.choice(range(1, 150)) / 100,
             range(self.configuration_service.recipe_size))
         )
 

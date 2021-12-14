@@ -11,10 +11,18 @@ class RecipeEntry(object):
         '''FDC ID of this ingredient'''
         return self._fdc_id
 
+    @fdc_id.setter
+    def fdc_id(self, value: int):
+        self._fdc_id = value
+
     @property
     def percent_100_grams(self) -> float:
         '''Amount of this ingredient, in percent of 100 grams'''
         return self._pct_100_grams
+
+    @percent_100_grams.setter
+    def percent_100_grams(self, value: float):
+        self._pct_100_grams = value
 
     @property
     def mass_g(self) -> float:
